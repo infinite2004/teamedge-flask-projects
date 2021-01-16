@@ -1,0 +1,131 @@
+!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Hello!</title>
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/static/style.css">
+
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+   
+    <h1>
+      designs by ,{{greeting}}
+    </h1>
+    <h2>
+      collabparters
+    </h2>
+      <ol>
+        {% for friend in friends %}
+        <li>{{friend}}</li>
+        {% endfor %}
+      </ol>
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <div class="numbertext">1 / 5</div>
+        <video width="1000" height="500" controls>
+          <source
+            src="https://cdn.glitch.com/6ad55975-c961-493e-9d4c-f9f88a44a2e6%2FSocietty%20we%20live.mp4?v=1606448506355"
+            ty
+            pe="video/mp4"
+          />
+        </video>
+        <div class="text">Vid1</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">2 / 5</div>
+        <video width="1000" height="500" controls>
+          <source
+            src="https://cdn.glitch.com/6ad55975-c961-493e-9d4c-f9f88a44a2e6%2FAuricle.mp4?v=1606449021624"
+            type="video/mp4"
+          />
+        </video>
+        <div class="text">Vid2</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 5</div>
+        <video width="1000" height="500" controls>
+          <source
+            src="https://cdn.glitch.com/6ad55975-c961-493e-9d4c-f9f88a44a2e6%2FWater.mp4?v=1606449377630"
+            type="video/mp4"
+          />
+        </video>
+        <div class="text">Vid3</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">4 / 5</div>
+        <video width="1000" height="500" controls>
+          <source
+            src="https://cdn.glitch.com/6ad55975-c961-493e-9d4c-f9f88a44a2e6%2FBe%20the%20change.mp4?v=1606449384111"
+            type="video/mp4"
+          />
+        </video>
+        <div class="text">Vid4</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">5 / 5</div>
+        <video width="1000" height="500" controls>
+          <source
+            src="https://cdn.glitch.com/6ad55975-c961-493e-9d4c-f9f88a44a2e6%2Fcolor%20(1).mp4?v=1606449390686"
+            type="video/mp4"
+          />
+        </video>
+        <div class="text">Vid5</div>
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br />
+
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+      <span class="dot" onclick="currentSlide(45)"></span>
+    </div>
+
+    <script>
+      var slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace("active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += "active";
+      }
+    </script>
+  </body>
+</html>
