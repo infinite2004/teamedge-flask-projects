@@ -9,10 +9,14 @@ app = Flask(__name__)
 def index():
     name = 'Abdul Q'
     friends =['joe','bob','robert','bobby']
+   
     return render_template('index.html',greeting = name,friends =friends)
 @app.route('/about')
 def about():
     return '<h1>about</h1><p>some other content</p>'
+
+
+
 
 
 @app.route('/nasa')
@@ -43,16 +47,15 @@ def movies_search_title():
         json_info = json.load(json_data)
     results = []
     if 'title' in request.args:
-        #stores the results of the title the user put into thee url
+        #stores the results of the title the user put into the url
         title=request.args['title']
         # goes through the moves.json files and searchs for the movie
-        for movie in json_info:
+        for movie in json_info:# if it equals the movies title then it appends the information off the title
             if title in movie['title']:   
                 results.append(movie)
     if len(results) < 1:
         return "no results found"
     return render_template("movies.html",results=results)
-
 
 
 
