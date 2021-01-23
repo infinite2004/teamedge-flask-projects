@@ -38,5 +38,10 @@ def indigo():
 def violet():
     placeholder = 'VIOLET'
     return render_template('violet.html',placeholder=placeholder)
+@app.route('/rainbow')
+def rainbow():
+    rainbow =['/blue','/red','/green','/yellow','/violet','/orange','/indigo']
+    return render_template('rainbow.html',rainbow=rainbow)
+
 if __name__ == '__main__':
     app.run(debug=True, host='192.168.1.213')
