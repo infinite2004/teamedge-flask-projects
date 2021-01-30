@@ -43,5 +43,16 @@ def rainbow():
     rainbow =['/blue','/red','/green','/yellow','/violet','/orange','/indigo']
     return render_template('rainbow.html',rainbow=rainbow)
 
+
+
+
+
+
+
+
+
+
+
+
 if __name__ == '__main__':
     app.run(debug=True, host='192.168.1.213')
