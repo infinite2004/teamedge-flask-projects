@@ -5,6 +5,28 @@ sense = SenseHat()
   
 app = Flask(__name__)
 
+r = (255, 0, 0 )# RED color, stored in an another data structure called a tuple.
+k = (0, 0, 0) # black means zero amounts of red, green and blue
+w =(255,255,255)
+g =(0,255,0)
+y =(0,0,225)
+n =(255,128,128)
+o =(255,128,0)
+
+
+rmon1 =[ 
+o, y, y, y, y, y, y, o,
+o, o, n, y, y, n, o, o,
+y, k, k, y, y, w, k, y,
+y, w, k, y, y, k, k, y,
+y, y, y, k, k, y, y, y,
+n, n, n, y, y, n, n, n,
+n, n, n, y, y, n, n, n,
+n, n, n, y, y, n, n, n,
+]   
+
+sense.set_pixels(rmon1)
+
 @app.route('/success/<name>')
 def success(name):
     sense.show_message(name)
