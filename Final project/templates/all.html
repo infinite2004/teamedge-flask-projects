@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Messages</title>
+</head>
+<body>
+    <h1>All Messages</h1>
+    {% for user in users %}
+        <p>{{user["user"]}} from {{user["name"]}}</p>
+        <form action="/display" method="post"> 
+            <input type="hidden" name="message" value="{{user['user']}}" />
+            <input type="submit" value="Display Now" /> 
+        </form> 
+    {% endfor %}
+</body>
+</html>
